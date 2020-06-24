@@ -34,7 +34,7 @@ def buscar():
     buscar=input('Quem deseja buscar? ')
     sql.execute("select * from cliente where nome like'%'+?+'%'",buscar)
     for s in sql:
-        print('\n CADASTRO')
+        print('\n CADASTRO de:',s[1])
         print(s)
 
 def listar():
