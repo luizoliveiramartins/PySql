@@ -32,12 +32,10 @@ def inserir():
 
 def buscar():
     buscar=input('Quem deseja buscar? ')
-    sql.execute('select nome from cliente where nome like(%?%)',buscar.title())
-    for i in sql:
-        if buscar.title() in sql:
-            print(buscar,'há cadastro dele.')
-        else:
-            print('Não há cadastro de',buscar.title(),'no sistema.')
+    sql.execute("select * from cliente where nome like'%'+?+'%'",buscar)
+    for s in sql:
+        print('\n CADASTRO')
+        print(s)
 
 def listar():
     sql.execute('select * from cliente')
